@@ -19,7 +19,6 @@ export default function Term(props: { term: TermType; kana?: boolean }) {
 
     setTooltipStyle((cur: any) => {
       if (left && right && width) {
-        console.log(left, width);
         if (left < 0) {
           return {
             ...cur,

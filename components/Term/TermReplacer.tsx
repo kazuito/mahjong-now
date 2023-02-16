@@ -8,7 +8,6 @@ const words = terms.map((term) => {
   return term.word;
 });
 const termRegex = RegExp(`(${words.join("|")})`);
-console.log(termRegex);
 
 function replaceTerms(children: ReactNode, kana?: boolean): ReactNode[] {
   const childArray = Children.toArray(children);
