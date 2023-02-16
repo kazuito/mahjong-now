@@ -1,0 +1,10 @@
+.tiles {
+  display: flex;
+  gap: 1px;
+  align-items: end;
+}
+.horizontalTiles {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1px;
+}

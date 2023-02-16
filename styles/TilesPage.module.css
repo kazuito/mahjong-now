@@ -1,0 +1,23 @@
+.section {
+  padding: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.sectionTitle {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+.subTitle {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 14px;
+  color: rgb(175, 175, 175);
+}
+
+.tileLine {
+  display: flex;
+  gap: 8px;
+}
+.tileName {
+  font-size: 6px;
+  font-weight: bold;
+}

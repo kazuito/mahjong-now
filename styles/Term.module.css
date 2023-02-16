@@ -1,0 +1,120 @@
+.tooltipBox {
+  position: relative;
+  display: inline;
+  --term-popup-bg: #202020;
+}
+
+.tooltipBody {
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  width: max-content;
+  max-width: 260px;
+  max-height: 120px;
+  padding: 12px;
+  border-radius: 4px;
+  display: none;
+  top: 0;
+  background: var(--term-popup-bg);
+  color: white;
+  left: 50%;
+  transform: translate(-50%, calc(-100% - 6px));
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.16s;
+  overflow: auto;
+  display: flex;
+  visibility: hidden;
+  display: none;
+}
+.tooltipBody::-webkit-scrollbar {
+  background: var(--term-popup-bg);
+  width: 14px;
+}
+.tooltipBody::-webkit-scrollbar-thumb {
+  background-color: rgb(75, 75, 75);
+  box-shadow: 0 0 0 4px var(--term-popup-bg) inset;
+  border-radius: 999px;
+}
+.tooltipBody::-webkit-scrollbar-button {
+  display: none;
+}
+.tooltipBody::-webkit-scrollbar-corner {
+  display: none;
+}
+.tooltipTri {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 6.5px solid var(--term-popup-bg);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+  opacity: 0;
+  transition: opacity 0.16s;
+}
+
+.tooltipBody.draw {
+  visibility: hidden;
+  display: flex;
+  opacity: 0;
+}
+@keyframes fade-in-tooltip-body {
+  from {
+    transform: translate(-50%, calc(-100% - 18px));
+  }
+  to {
+    transform: translate(-50%, calc(-100% - 6px));
+    opacity: 1;
+  }
+}
+.tooltipBody.show {
+  animation: fade-in-tooltip-body 0.3s cubic-bezier(0.18, 0.47, 0, 1.01);
+  opacity: 1;
+  visibility: visible;
+}
+@keyframes fade-in-tooltip-tri {
+  from {
+    transform: translate(-50%, calc(-100% - 12px));
+  }
+  to {
+    transform: translate(-50%, -100%);
+    opacity: 1;
+  }
+}
+.tooltipTri.show {
+  animation: fade-in-tooltip-tri 0.3s;
+  opacity: 1;
+}
+.word {
+  text-decoration: underline dotted;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 4px;
+}
+.show ~ .word {
+  --term-word-bg-1: rgb(255, 242, 147);
+  --term-word-bg-2: rgb(255, 222, 74);
+  transition: 0.2s;
+
+  background: repeating-linear-gradient(
+    45deg,
+    var(--term-word-bg-1),
+    var(--term-word-bg-1) 4px,
+    var(--term-word-bg-2) 4px,
+    var(--term-word-bg-2) 8px
+  );
+  color: black;
+}
+
+.termHeading {
+  font-size: 18px;
+  font-weight: bold;
+}
+.termContent {
+  font-size: 14px;
+  line-height: 18px;
+}

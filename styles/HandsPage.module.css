@@ -1,0 +1,244 @@
+/* Text Decorations */
+.textDeco_hl {
+  background: linear-gradient(transparent 60%, #fff690 60%);
+}
+.textDeco_bold {
+  font-weight: bold;
+}
+
+.main {
+  background: #f7f7f7;
+  padding-top: 16px;
+}
+
+/* Search */
+.searchBox {
+  display: flex;
+  top: 0;
+  align-items: center;
+  padding: 0 20px 0 16px;
+  gap: 8px;
+  margin: 0 16px 16px 16px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 1px 2px 5px #cdcdcd;
+}
+.searchInput {
+  width: 100%;
+  font-size: 18px;
+  padding: 8px 0;
+  background: transparent;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.searchResetBtn {
+  top: 0;
+  border-radius: 999px;
+  padding: 8px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+.searchResetBtn:active {
+  transform: scale(1.8);
+}
+
+/* Main Contents */
+.sectionTitle {
+  margin: 16px 16px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+  padding: 8px 16px;
+  border: solid 3px black;
+  color: #000;
+  border-radius: 999px;
+  z-index: 100;
+  backdrop-filter: blur(2px);
+}
+.handSection:not(:has([data-visible])) {
+  display: none;
+}
+.handBox {
+  padding: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  margin-top: 8px;
+  transform: translateZ(0);
+  /* overflow: hidden; */
+}
+.handBox[data-hidden] {
+  display: none;
+}
+
+/* Hand Head */
+.handHead {
+  padding: 12px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  /* background: rgb(255, 158, 158); */
+  overflow: hidden;
+  transform: translateZ(0);
+  position: relative;
+  border-radius: 4px !important;
+}
+.handHead.val-han1 {
+  --bg: linear-gradient(45deg, #1e9500 0%, #daff6b 100%);
+  --blend-mode: multiply;
+}
+.handHead.val-han2,
+.handHead.val-han2_25 {
+  --bg: linear-gradient(45deg, #0072ff 0%, #72ffd8 100%);
+  --blend-mode: multiply;
+}
+.handHead.val-han3 {
+  --bg: linear-gradient(45deg, #1b0526 0%, #e1a7ff 50%, #9440b7 100%);
+  --blend-mode: multiply;
+}
+.handHead.val-han6 {
+  --bg: linear-gradient(
+    45deg,
+    #f9ff9d 0%,
+    #896a12 25%,
+    #f7ff7e 50%,
+    #bf9319 75%,
+    #ffe482 100%
+  );
+  --blend-mode: multiply;
+}
+.handHead.val-yakuman {
+  --bg: linear-gradient(
+    40deg,
+    rgb(96 0 0) 0%,
+    rgb(173 59 59) 17%,
+    rgb(231 21 21) 30%,
+    rgb(155 33 33) 45%,
+    rgb(255 62 62) 63%,
+    rgb(169 5 5) 79%,
+    rgb(153 36 36) 100%
+  );
+  --blend-mode: multiply;
+}
+.handHead::before {
+  transform: translateZ(0);
+  content: "";
+  width: 120%;
+  height: 220px;
+  left: -20%;
+  top: -90%;
+  background: var(--bg);
+  border-radius: 999px;
+  position: absolute;
+  z-index: -1;
+}
+
+.handTags {
+  display: flex;
+  gap: 4px;
+  mix-blend-mode: overlay;
+}
+.handTag,
+.handTagBorder {
+  font-size: 12px;
+  color: #fff;
+  background: #000;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: bold;
+}
+.handTagBorder {
+  color: black;
+  background: #fff;
+}
+.handNames {
+  margin-top: 6px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 8px;
+}
+.handName {
+  text-shadow: 2px 1px 0 #000;
+  font-weight: 800;
+  font-size: 24px;
+  color: #fff;
+  white-space: nowrap;
+}
+.handSubName {
+  text-shadow: 0.8px 0.5px 0 #000;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+}
+.handShortDescriptionWrapper {
+  color: gray;
+  margin-top: 4px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.handShortDescription {
+  font-size: 14px;
+}
+.handHanValue {
+  position: absolute;
+  font-size: 48px;
+  font-family: "Noto Sans JP", sans-serif;
+  right: 24px;
+  font-weight: 900;
+  overflow: show;
+  color: transparent;
+  background: var(--bg);
+  background-clip: text;
+  z-index: -1;
+  mix-blend-mode: var(--blend-mode);
+}
+
+/* Hand Contents */
+.tileLine {
+  margin-top: 18px;
+  display: flex;
+  gap: 2px;
+  max-width: 500px;
+  align-items: baseline;
+}
+.tileGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.groupLine {
+  margin-top: 3px;
+  width: 100%;
+  height: 3px;
+  background: rgb(103, 117, 223);
+  border-radius: 4px;
+}
+.tileGroupDetails {
+  font-size: 10px;
+}
+
+.handDescription {
+  font-size: 14px;
+  margin-top: 14px;
+}
+.handDetailsLink {
+  margin-top: 8px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #005aff;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.handDetailsLink:hover {
+  text-decoration: underline;
+}
+.handDetailsLink svg {
+  transition: 0.4s;
+}
+.handDetailsLink:hover svg {
+  transition: 0.4s;
+  transform: translateX(4px);
+}
