@@ -50,24 +50,26 @@ export default function Term(props: { term: TermType; kana?: boolean }) {
       }}
     >
       {drawTooltip && (
-        <div
-          className={`${s.tooltipBody} ${drawTooltip ? s.draw : ""} ${
-            showTooltip ? s.show : ""
-          }`}
-          ref={tooltipRef}
-          style={tooltipStyle}
-        >
-          <div className={s.termHeading}>
-            {props.term.word} {props.term.kana && <>({props.term.kana})</>}
+        <>
+          <div
+            className={`${s.tooltipBody} ${drawTooltip ? s.draw : ""} ${
+              showTooltip ? s.show : ""
+            }`}
+            ref={tooltipRef}
+            style={tooltipStyle}
+          >
+            <div className={s.termHeading}>
+              {props.term.word} {props.term.kana && <>({props.term.kana})</>}
+            </div>
+            <div className={s.termContent}>{props.term.description}</div>
           </div>
-          <div className={s.termContent}>{props.term.description}</div>
-        </div>
+          <div
+            className={`${s.tooltipTri} ${drawTooltip ? s.draw : ""} ${
+              showTooltip ? s.show : ""
+            }`}
+          ></div>
+        </>
       )}
-      <div
-        className={`${s.tooltipTri} ${drawTooltip ? s.draw : ""} ${
-          showTooltip ? s.show : ""
-        }`}
-      ></div>
       <span className={s.word} ref={termRef}>
         {props.term.word}
         {props.term.kana && props.kana && <>({props.term.kana})</>}
