@@ -108,6 +108,7 @@
     var(--term-word-bg-2) 8px
   );
   color: black;
+  text-decoration-color: transparent;
 }
 
 .termHeading {

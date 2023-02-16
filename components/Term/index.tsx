@@ -57,8 +57,7 @@ export default function Term(props: { term: TermType; kana?: boolean }) {
         style={tooltipStyle}
       >
         <div className={s.termHeading}>
-          {props.term.word}
-          {props.term.kana && <>({props.term.kana})</>}
+          {props.term.word} {props.term.kana && <>({props.term.kana})</>}
         </div>
         <div className={s.termContent}>{props.term.description}</div>
       </div>
