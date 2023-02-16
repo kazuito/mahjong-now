@@ -1,7 +1,7 @@
 .tiles {
   display: flex;
   gap: 1px;
-  align-items: end;
+  align-items: flex-end;
 }
 .horizontalTiles {
   display: flex;
