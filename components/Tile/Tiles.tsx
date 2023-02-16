@@ -1,5 +1,6 @@
 import Tile from "./Tile";
 import s from "@/styles/Tiles.module.css";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Tiles(props: { names: string; height?: number }) {
   let tmp = props.names.replace(/\s/g, "").split(",");
@@ -39,16 +40,30 @@ export default function Tiles(props: { names: string; height?: number }) {
         if (bracketsMatch) {
           let tmp2 = bracketsMatch[1].split("+");
           if (tmp2.length == 1)
-            return <Tile height={props.height} horizontal name={tmp2[0]} />;
+            return (
+              <Tile
+                key={uuidv4()}
+                height={props.height}
+                horizontal
+                name={tmp2[0]}
+              />
+            );
           return (
-            <div className={s.horizontalTiles}>
+            <div key={uuidv4()} className={s.horizontalTiles}>
               {tmp2.map((name) => {
-                return <Tile height={props.height} horizontal name={name} />;
+                return (
+                  <Tile
+                    key={uuidv4()}
+                    height={props.height}
+                    horizontal
+                    name={name}
+                  />
+                );
               })}
             </div>
           );
         }
-        return <Tile height={props.height} key={i} name={name} />;
+        return <Tile key={uuidv4()} height={props.height} name={name} />;
       })}
     </div>
   );

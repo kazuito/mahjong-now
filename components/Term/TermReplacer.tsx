@@ -1,8 +1,8 @@
 import React, { Children, ReactNode } from "react";
 import reactStringReplace from "react-string-replace";
-import { isArray } from "util";
 import Term from ".";
 import terms from "./terms";
+import { v4 as uuidv4 } from "uuid";
 
 const words = terms.map((term) => {
   return term.word;
@@ -15,14 +15,14 @@ function replaceTerms(children: ReactNode, kana?: boolean): ReactNode[] {
   const newChildren = childArray.map((child) => {
     if (typeof child === "string") {
       return (
-        <>
+        <React.Fragment key={uuidv4()}>
           {reactStringReplace(child, termRegex, (match, i) => {
             let termIndex = terms.findIndex((term) => {
               return term.word === match;
             });
-            return <Term key={i} term={terms[termIndex]} kana={kana} />;
+            return <Term key={uuidv4()} term={terms[termIndex]} kana={kana} />;
           })}
-        </>
+        </React.Fragment>
       );
     } else if (React.isValidElement(child)) {
       const newChild = replaceTerms(child.props.children, kana);
