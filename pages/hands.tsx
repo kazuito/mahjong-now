@@ -393,7 +393,7 @@ export default function Hands() {
                 海底牌をツモした人が最後に打牌した河底牌でロンをすると成立。ロンアガり。
               </>
             }
-            shortDesc="最後の打稗でロン"
+            shortDesc="最後の打牌でロン"
             claim
           >
             <TileGroup description="アガりの形" lineColor="blue">
@@ -431,7 +431,7 @@ export default function Hands() {
                 他家が加槓した際、その牌(カカンで晒された牌)でロンをすると成立。
               </>
             }
-            shortDesc="他のプレーヤーの加槓(カカン)稗でロン"
+            shortDesc="他のプレーヤーの加槓(カカン)牌でロン"
             claim
           >
             <TileGroup description="アガりの形" lineColor="blue">
@@ -454,7 +454,7 @@ export default function Hands() {
                 ※親：最初の配牌時の14枚でテンパイが確定していればOK
               </>
             }
-            shortDesc="一巡目の捨稗でリーチを宣言"
+            shortDesc="一巡目の捨牌でリーチを宣言"
           >
             <TileGroup description="上がりの形" lineColor="blue">
               <Tiles names="blank*14" />
@@ -769,7 +769,7 @@ export default function Hands() {
                 萬子・索子・筒子のどれか一種と、字牌だけを使って4面子1雀頭を作る。
               </>
             }
-            shortDesc="数稗1種と字牌だけで揃える"
+            shortDesc="数牌1種と字牌だけで揃える"
             gradeDownByClaim={2}
           >
             <TileGroup description="雀頭" lineColor="red">
@@ -792,7 +792,7 @@ export default function Hands() {
             description={
               <>萬子・索子・筒子のどれか一種だけを使って4面子1雀頭を作る。</>
             }
-            shortDesc="数稗1種だけで揃える"
+            shortDesc="数牌1種だけで揃える"
             gradeDownByClaim={5}
           >
             <TileGroup description="雀頭" lineColor="red">
@@ -884,7 +884,7 @@ export default function Hands() {
                 。發を使わない緑一色をダブル役満とする場合があります。また、逆に發が無いと緑一色が成立しないというルールもあるので注意。
               </>
             }
-            shortDesc="緑色の稗だけで揃える"
+            shortDesc="緑色の牌だけで揃える"
             claim
           >
             <TileGroup description="雀頭" lineColor="red">
@@ -926,7 +926,7 @@ export default function Hands() {
             }}
             hanValue={hanValues.yakuman}
             description={<>1・9牌のみで全ての面子と雀頭を揃えます。</>}
-            shortDesc="1・9稗だけで揃える"
+            shortDesc="1・9牌だけで揃える"
             claim
           >
             <TileGroup description="雀頭" lineColor="red">
@@ -1030,10 +1030,10 @@ export default function Hands() {
                 】の形を揃えます。Xは同種の任意の数字です。九面待ちで上がった場合は、「純正九蓮宝燈」と言い、ダブル役満とするケースが多い。
               </>
             }
-            shortDesc="数稗1種で【 111 2345678 999 + X 】の形を揃える"
+            shortDesc="数牌1種で【 111 2345678 999 + X 】の形を揃える"
           >
             <TileGroup
-              description="同種の数稗で 111 2345678 999 の形"
+              description="同種の数牌で 111 2345678 999 の形"
               lineColor="red"
             >
               <Tiles names="man1*3,man2,man3,man4,man5,man6,man7,man8,man9*3" />

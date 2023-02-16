@@ -76,7 +76,7 @@ const terms: TermType[] = [
   {
     word: "対子",
     kana: "トイツ",
-    description: "稗2つからなるペア",
+    description: "牌2つからなるペア",
   },
   {
     word: "刻子",

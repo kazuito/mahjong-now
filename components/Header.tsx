@@ -47,7 +47,7 @@ export default function Header() {
         </Link>
         {/* <div className={styles.navLinks}>
         <Link className={styles.navLink} href={"./tiles"}>
-          稗リスト
+          牌リスト
         </Link>
       </div> */}{" "}
         {winScrollY > 100 && handSearchQuery != "" && (

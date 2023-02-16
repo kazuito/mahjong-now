@@ -20,7 +20,7 @@ export default function Home() {
           <div className={styles.panelHead}>
             <Tile name="sou1" height={52} />
             <div className={styles.panelTitle}>
-              <span>稗</span>（ハイ）一覧
+              <span>牌</span>（ハイ）一覧
             </div>
           </div>
         </Link>
